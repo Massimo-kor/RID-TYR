@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>РІД-ТУР</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Style the body */
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+
+      /* Header/logo Title */
+      .header {
+        padding: 80px;
+        text-align: center;
+        background: #0007c6;
+        color: white;
+      }
+
+      /* Increase the font size of the heading */
+      .header h1 {
+        font-size: 40px;
+      }
+
+      /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+      .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+      }
+
+      /* Style the navigation bar links */
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+      /* Right-aligned link */
+      .navbar a.right {
+        float: right;
+      }
+
+      /* Change color on hover */
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      /* Active/current link */
+      .navbar a.active {
+        background-color: #666;
+        color: white;
+      }
+
+      /* Column container */
+      .row {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        max-width: 1024px;
+        margin: 0 auto;
+      }
+
+      .profile {
+        display: flex;
+      }
+
+      .img-profile {
+        width: 400px;
+      }
+      .right-side {
+        margin-left: 20px;
+      }
+
+      .img-profile img {
+        width: 100%;
+      }
+
+      img {
+        transition: 0.3s;
+        border-radius: 10px;
+      }
+
+      img:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 5px 35px 5px #000000;
+      }
+      section {
+        width: 100%;
+      }
+
+      /* Footer */
+      .footer {
+        margin-top: 20px;
+        padding: 20px;
+        text-align: center;
+        background:#0007c6;
+        color: white;
+;
+      }
+      .fab {
+        font-size: 2.3rem;
+        transition: 0.2s;
+      }
+      .fab:hover {
+        transform: translateY(-2px) scale(1.5);
+      }
+
+      .social-icons i {
+        margin: 1rem;
+      }
+
+      p {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+      }
+      .about-me {
+        margin-top: 0;
+      }
+
+      .activities {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+      }
+      h2 {
+        text-align: center;
+      }
+
+      .tour-logo {
+        width: 600px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .tour-logo img {
+        width: 100%;
+      }
+
+      .logo {
+        width: 200px;
+        display: block;
+        margin: 0 auto;
+      }
+      .video {
+        max-width: 900px;
+        display: block;
+        margin: 20px auto;
+      }
+      .logo img {
+        width: 100%;
+      }
+      .audio {
+        display: block;
+        margin: 20px auto;
+      }
+
+      /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 900px) {
+        p {
+          margin: 0 2rem;
+        }
+        .row {
+          flex-direction: column;
+        }
+
+        .about-me {
+          margin-top: 1rem;
+        }
+
+        .profile {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+      @media screen and (max-width: 500px) {
+        .navbar a {
+          float: none;
+          width: 100%;
+        }
+        .navbar {
+        position: relative;
+      }
+        p {
+          font-size: 1rem;
+          word-wrap: break-word;
+        }
+        .tour-logo {
+          width: 350px;
+          display: block;
+          margin: 0 auto;
+        }
+
+        .tour-logo img {
+          width: 100%;
+        }
+
+        img:hover {
+          transform: scale(1);
+          box-shadow: none;
+        }
+        .activities img {
+          width: 90%;
+        }
+
+        .social-icons {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#" class="active">Головна</a>
+      <a href="#busTour">Автобусні тури</a>
+      <a href="#aviaTour">Авіа тури</a>
+      <a href="#aboutMe">Про мене</a>
+      <a href="#aboutUs">Про нас</a>
+
+      <a href="#" class="right">Вийти</a>
+    </div>
+
+    <header class="header">
+      <h1>РІД-ТУР</h1>
+      <p>Ми працюємо, щоб <b> клієнти</b> отримували задоволення!</p>
+    </header>
+    <h2 class="heading">Про мене</h2>
+    <main class="row">
+      <section class="profile">
+        <div class="left-side">
+          <div class="img-profile">
+            <img src="img/photo_2020-02-19_08-26-30.jpg" />
+          </div>
+        </div>
+        <div class="right-side">
+          <p class="about-me" id="aboutMe">
+            Мене звати Максим, я молодий і амбітний власник РІД-ТУР, це мій перший
+            власний проект, до якого я доклав всі свої сили, а також були
+            потрачені великі кошти, але це все заради моїх клієнтів, ми хочемо,
+            щоб вони були задоволені нашими турами, і розказували про нас іншим.
+          </p>
+          <p class="social-icons">
+            <a
+              href="https://www.instagram.com/ridtur/"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/ridtur/?locale=uk_UA"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-f"></i
+            ></a>
+          </p>
+
+          <div class="activities">
+            <img scr="img/000.png" />
+            <img src="img/9.png" />
+            <img src="img/8.png" />
+            <img src="img/7.png" />
+            <img src="img/6.png" />
+          </div>
+        </div>
+      </section>
+
+      <section id="aboutUs">
+        <h2>ПРО НАС</h2>
+
+        <h2>Ми відкрились 8 березня, 2020 року</h2>
+        <div class="logo">
+          <img src="img/pf_logo.jpg" />
+        </div>
+        <p>
+          Прайс агрегатор нашої туристичної компанії легкий спосіб вибрати тур
+        </p>
+        <p>
+          Ми допоможемо Вам вибрати відпочинок на морі в будь-якій частині
+          світу; гарячі путівки; автобусні екскурсійні тури; тур вихідного дня
+          або круїз; забронювати авіаквитки. Ви можете самостійно здійснити
+          онлайн пошук туру серед пропозицій найбільших туроператорів
+        </p>
+
+        <audio class="audio" controls src="img/musik.mp3"></audio>
+      </section>
+
+      <section id="aviaTour">
+        <h2>Туроператор №1 в Україні</h2>
+
+        <div class="tour-logo">
+          <img src="img/tsvetnojturahentsyia1.png" />
+        </div>
+      </section>
+
+      <section id="busTour">
+        <h2>Ми поважаємо наших туристів</h2>
+        <p>
+          Багато людей люблять подорожувати , але не знають куди поїхати –
+          Jorden допоможе їм при виборі відпочинку .
+        </p>
+
+        <div class="tour-logo">
+          <img src="img/jorden.png" />
+        </div>
+        <video class="video" controls="controls">
+          <source
+            src="img/video.webm"
+            type='video/webm; codecs="vp8, vorbis"'
+          />
+          <a href="img/video.webm">Скачайте видео</a>.
+        </video>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <h2>Хороших вам подорожей!</h2>
+    </footer>
+  </body>
+</html>
